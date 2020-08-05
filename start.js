@@ -60,8 +60,63 @@ const person = {
 person.greet();
 
 // Arrays
-hobbies = ['read', 'playing']
+const hobbies = ['read', 'kids games']
 // for (let hobby of hobbies){
 //     console.log(hobby)
 // };
-console.log(hobbies.map(hobby => hobby))
+console.log(hobbies.map(hobby => hobby));
+
+// this does't give error though hobbies is defined as const
+// as hobbies is an array and array is refernce data type
+hobbies.push('piano');
+console.log(hobbies);
+
+// -----spread and rest operator---------
+// creating copy of an array
+// const copiedarray = slice(hobbies)
+// const copiedarray = [hobbies]
+// othe way is using spread
+// this also works for objects
+const copiedarray = [...hobbies];
+console.log(copiedarray);
+
+// rest operator
+// oppostie of spread
+const toArray = (...args) => {
+    return args
+};
+
+console.log(toArray(1,2,3,4));
+
+// -------------Async and Promises-------------
+// async - code ocntinues to run , doesn't wait for currentl ine to end
+// promises - returns two functions resolve  and reject
+//  resolve: when promise is cmpleted
+//  reject: when promise is not complted
+//  .then can be used multiple site
+// another good explanation on ppromises: https://www.youtube.com/watch?v=DHvZLI7Db8E
+
+const fetchData = () => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('Done!');
+      }, 1500);
+    });
+    return promise;
+  };
+  
+  setTimeout(() => {
+    console.log('Timer is done!');
+    fetchData()
+      .then(text => {
+        console.log(text);
+        return fetchData();
+      })
+      .then(text2 => {
+        console.log(text2);
+      });
+  }, 2000);
+  
+  console.log('Hello!');
+  console.log('Hi!');
+
