@@ -13,6 +13,12 @@ const http = require('http');
 // Method 3 - call as follows - all means samething
 const server = http.createServer((req, res) => {
     console.log(req.url, req.method, req.headers);
+    res.setHeader('Content-Header','text/html');
+    res.write('<html')
+    res.write('<head><title>This is title</title></head>')
+    res.write('<body><h1>This is body</h1></body>')
+    res.write('</html')
+    res.end()
 });
 
 server.listen(3000);
