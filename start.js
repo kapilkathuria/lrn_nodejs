@@ -120,3 +120,5 @@ const fetchData = () => {
   console.log('Hello!');
   console.log('Hi!');
 
+// ------------------
+// Next file - app.js
