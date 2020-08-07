@@ -1,0 +1,25 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "for learning nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-sever": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapilkathuria/lrn_nodejs.git"
+  },
+  "author": "kapil kathuria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kapilkathuria/lrn_nodejs/issues"
+  },
+  "homepage": "https://github.com/kapilkathuria/lrn_nodejs#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
