@@ -15,6 +15,7 @@ const fs = require('fs');
 const server = http.createServer((req, res) => {
     const url = req.url;
     method = req.method;
+    // body  = req.body;
     if (url === '/'){
         res.write('<html')
         res.write('<head><title>Enter message</title></head>')
@@ -24,13 +25,22 @@ const server = http.createServer((req, res) => {
         return res.end()
     }
     if (url === '/message' && method === 'POST'){
+        const body = [];
+        req.on('data', (chunk) => {
+            console.log(chunk);
+            body.push(chunk);
+        });
+        req.on('end',()=> {
+            const parsedBody  = Buffer.concat(body).toString();
+            console.log(body);
+        });
         fs.writeFileSync('message.txt','dummy text');
         res.statusCode = 302;
         res.setHeader('Location','/');
         return res.end();
     }
 
-    console.log(req.url, req.method, req.headers);
+    // console.log(req.url, req.method, req.headers);
     res.setHeader('Content-Header','text/html');
     res.write('<html')
     res.write('<head><title>This is title</title></head>')
@@ -47,3 +57,14 @@ server.listen(3000);
 // nnodejs uses event driven apppraoch for everything
 
 // Routing
+// See if (url === '/') above
+
+// parsing bodies
+// see req.on('data', (chunk)
+//  Buffer.concat(body).toString();
+
+// event  driven  execution
+//  understand some code will be executed later
+
+// blocking and non blocking code
+// 
