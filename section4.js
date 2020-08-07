@@ -17,3 +17,6 @@
 
 // 3. logical errors: won't see error message but the app won't behave as yuo expectd
 //  use debugger
+
+// other files updated
+// package.json
