@@ -18,7 +18,9 @@
     "url": "https://github.com/kapilkathuria/lrn_nodejs/issues"
   },
   "homepage": "https://github.com/kapilkathuria/lrn_nodejs#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
