@@ -38,6 +38,9 @@ app.use((req, res, next) => {
     next();  //allows next middleware to be called otherwise code execution remain sin current middleware
 })
 
+// statically served files means - files directly forwarded tofile syste
+// 
+
 
 // Files changes
 // routes.js has been renamed as routes_section4.js, app.js as app_section.js

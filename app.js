@@ -18,6 +18,7 @@ const app = express();
 // ths is for parsing - sent, form ect.
 // differnt parser will be used for parsing files  json etc.
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname,'public')))
 
 // first partameter: make it  url/admin/rest of routes
 app.use('/admin', adminRoutes);
