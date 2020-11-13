@@ -36,6 +36,8 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
+    // handle page not found.
+    // sets error message
     res.status(404).sendFile(path.join(__dirname,'views','404.html'))
 })
 

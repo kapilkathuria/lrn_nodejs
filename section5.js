@@ -50,8 +50,10 @@ const router = express.Router();
 
 
 // statically served files means - files directly forwarded tofile system
+// here public folder is served statically
+// app.use(express.static(path.join(__dirname,'public')))
 // 
-
+// yu can have multiple static folder. app wil try to find files in all statically served folders one by one
 
 // Files changes
 // routes.js has been renamed as routes_section4.js, app.js as app_section4.js
