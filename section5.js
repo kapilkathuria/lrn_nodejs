@@ -1,9 +1,9 @@
 // Express.js
 
 // this section covers
-// 1. what is ezpress js
+// 1. what is express js
 // 2. using middleware
-// 3. working wiht requests and responses
+// 3. working with requests and responses
 // 4. routing
 // 5. returing html pages/files
 
@@ -18,17 +18,6 @@
 // 2. using middleware
 // incoming rquest is channeled through middleware. 
 // i.e. multiple code blocks can run together
-//  see app.js
-
-// 3. working wiht requests and responses
-// see following in app.js
-// body-parser
-// console.log(req.body);
-
-// 4. routing
-// 
-
-
 // use method allows us add middleware. app.use code block is middleware
 // this wil be called for all incoming requests
 // next: is anothe rfunction which will be tel lwhich next middleware need to be executed
@@ -37,10 +26,32 @@ app.use((req, res, next) => {
     console.log ('in middleware');
     next();  //allows next middleware to be called otherwise code execution remain sin current middleware
 })
+//  see app.js
 
-// statically served files means - files directly forwarded tofile syste
+
+// 3. working with requests and responses
+// see following in app.js
+// body-parser
+// console.log(req.body);
+
+// 4. routing
+// first matching route will be used
+// once first matching route is found, it will go to that
+// only if next() is used, it will go to next middleware
+// app.use('/',  (req, res, next) =>  {
+// 
+// })
+
+// 5. express router
+// express.Router is mini express app which can  be 
+//  used in other express app
+const router = express.Router();
+
+
+
+// statically served files means - files directly forwarded tofile system
 // 
 
 
 // Files changes
-// routes.js has been renamed as routes_section4.js, app.js as app_section.js
+// routes.js has been renamed as routes_section4.js, app.js as app_section4.js
